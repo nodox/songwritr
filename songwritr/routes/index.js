@@ -8,7 +8,6 @@ exports.index = function(req, res){
 };
 
 exports.chord = function(req,res){
-  var imageUrl = "/public/images/";
 
   imageUrl += req.param('chord'); //get the image name
 
