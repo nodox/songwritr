@@ -3,7 +3,8 @@ from flask import Flask
 app = Flask(__name__)
 
 name = "Matt"
-@app.route('/smell')
+
+@app.route('/')
 def hello_world():
   return name
 
