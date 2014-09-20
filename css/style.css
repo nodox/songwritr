@@ -1,0 +1,165 @@
+/*******************
+ ** UNHACKATHON
+ *** 09.20.14
+ **** Songwritr
+ **** HACK YO BUTT OFF
+ */
+
+
+/* reset */
+
+body {
+    font: 1em/1.22 Helvetica, Arial, sans-serif;
+    color: #666;
+    margin: 0;
+}
+.wrap {
+    margin: 0 30px;
+    overflow: hidden;
+}
+
+i {font-family: FontAwesome;}
+ul {list-style: none;padding: 0;margin: 0;}
+
+a {text-decoration: none; color: #fefefe}
+:hover {
+    transition: all linear .3s;
+    -webkit-transition: all linear .3s;
+    -moz-transition: all linear .3s;
+    -ms-transition: all linear .3s;
+    -o-transition: all linear .3s;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/* page layout */
+
+.main-nav, footer {
+    background: rgb(101, 211, 253);
+    color: #fefefe;
+/*     height: 50px; */
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: .8em;
+    padding: .5em 0;
+    height: 15px;
+}
+
+.main {
+    position: absolute;
+    top: 50px;
+    bottom: 15px;
+    width: 100%;
+}
+
+.canvas {
+    /* background: red; */
+    width: calc(100% - 300px);
+    float: left;
+    height: 100%;
+}
+
+.sidebar {
+    position: relative;
+    background: rgb(217, 245, 250);
+    width: 300px;
+    float: right;
+    height: 100%;
+}
+
+/* nav styles */
+
+.main-nav .logo {
+    float: left;
+    margin: 1em 0;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+.main-nav ul {
+    float: right;
+}
+.main-nav li {
+    float: left;
+    padding: 1em .8em;
+}
+
+.main-nav li:hover{
+    background: rgba(255,255,255,.3);
+    cursor: pointer;
+}
+
+/* sidebar styles */
+
+.quickadd, .custom {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    padding: 20px 0;
+    text-align: center;
+}
+.custom {
+    left: 100%;
+    background: rgb(217, 245, 250);
+}
+
+.sidebar ul {
+    position: relative;
+    float: left;
+    border-radius: 40px;
+    overflow: hidden;
+    left: 50%;
+    display: block;
+    clear: both;
+    -webkit-margin-after: 0;
+    -webkit-margin-before: 0;
+    margin: 8px 0;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.sidebar ul li {
+    color: #fff;
+    float: left;
+    background: rgb(127, 165, 233);
+    padding: 0.4em 0.75em;
+    border-right: #fefefe 1px solid;
+}
+.sidebar ul li:hover {
+    background: rgba(127, 165, 233, 0.8);
+    cursor: pointer;
+}
+.sidebar ul li:first-child {
+    padding-left: 1em;
+}
+.sidebar ul li:last-child {
+    border-right: none;
+    padding-right: 1em;
+}
+
+.title {
+    color: rgb(121, 112, 167);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 0.9em;
+}
+
+#exitCustom {
+    position: absolute;
+    width: 100%;
+    bottom: -20px;
+}
