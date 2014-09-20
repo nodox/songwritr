@@ -107,13 +107,14 @@ footer {
 /* sidebar styles */
 
 .quickadd, .custom {
-    position: absolute;
     width: 100%;
-    left: 0;
     padding: 20px 0;
     text-align: center;
+    overflow: hidden;
 }
 .custom {
+    position: absolute;
+    top: 0;
     left: 100%;
     background: rgb(217, 245, 250);
 
@@ -164,6 +165,24 @@ footer {
     border-right: none;
     padding-right: 1em;
 }
+
+
+.title {
+    color: rgb(121, 112, 167);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 0.9em;
+}
+
+#currentChord {
+    float: left;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+}
+
+
 #submitCustom {
     background: rgb(101, 211, 253);
     border: none;
@@ -178,13 +197,9 @@ footer {
     -o-transform: translateX(-50%);
     transform: translateX(-50%);
 }
-
-.title {
-    color: rgb(121, 112, 167);
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 2px;
-    font-size: 0.9em;
+#submitCustom:hover {
+    background: rgb(88, 200, 243) !important;
+    cursor: pointer;
 }
 
 #toCustom,
@@ -211,5 +226,5 @@ footer {
 #toCustom:hover,
 #exitCustom:hover {
     cursor: pointer;
-    opacity: .8;
+    color: rgb(128, 128, 201);
 }

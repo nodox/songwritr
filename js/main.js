@@ -23,13 +23,15 @@ function exitCustom() {
 	$( '.custom' ).css( 'left' , "100%" );
 }
 
-function imageChanger() {
+function imgChanger() {
 	var path = findImg();
+	console.log( path );
 	$( '#currentChord img' ).attr( 'src', path );
+	exitCustom();
 }
 
 function findImg() {
-	var imgPath = "images/";
+	var imgPath = "img/";
 	$( '.custom' ).find( '.active' ).each( function() {
 		imgPath += $( this ).text();
 	});
