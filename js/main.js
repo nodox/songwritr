@@ -2,6 +2,7 @@ $(function() {
 
 	$( '#toCustom' ).click( toCustom );
 	$( '#exitCustom' ).click( exitCustom );
+	$( '#submitCustom' ).click( imgChanger );
 
 	$( '.sidebar ul li' ).click( function() {
 		var $t = $( this );
@@ -16,12 +17,16 @@ $(function() {
 });
 
 function toCustom() {
-	$( '.custom' ).css( 'left' , 0 );
+	$( '.custom' ).css( 'left' , "0%" );
 }
 function exitCustom() {
 	$( '.custom' ).css( 'left' , "100%" );
 }
 
+function imageChanger() {
+	var path = findImg();
+	$( '#currentChord img' ).attr( 'src', path );
+}
 
 function findImg() {
 	var imgPath = "images/";

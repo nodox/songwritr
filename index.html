@@ -26,7 +26,10 @@
 	<div class="main">
 		<div class="canvas">
 			<div class="wrap">
-
+				<textbox>
+				</textbox>
+				<canvas>
+				</canvas>
 			</div>
 		</div>
 		<div class="sidebar">
@@ -44,35 +47,41 @@
 					<div id="toCustom">Custom Chord &raquo;</div>
 				</div>
 				<div class="custom">
+
 					<ul class="root">
-						<li>C</li>
-						<li>D</li>
-						<li>E</li>
-						<li>F</li>
-						<li>G</li>
-						<li>A</li>
-						<li>B</li>
+						<li value="C">C</li>
+						<li value="D">D</li>
+						<li value="E">E</li>
+						<li value="F">F</li>
+						<li value="G">G</li>
+						<li value="A">A</li>
+						<li value="B">B</li>
 					</ul>
 
 					<ul class="sharp">
-						<li>#</li>
-						<li>b</li>
+						<li value="#">#</li>
+						<li value="b">b</li>
 					</ul>
 					<ul class="opts">
-						<li>minor</li>
-						<li>sus</li>
-						<li>dim</li>
-						<li>aug</li>
+						<li value="minor">minor</li>
+						<li value="sus">sus</li>
+						<li value="dim">dim</li>
+						<li value="aug">aug</li>
 					</ul>
 					<ul class="upper">
-						<li>4</li>
-						<li>5</li>
-						<li>7</li>
-						<li>9</li>
-						<li>11</li>
-						<li>13</li>
+						<li value="4">4</li>
+						<li value="5">5</li>
+						<li value="7">7</li>
+						<li value="9">9</li>
+						<li value="11">11</li>
+						<li value="13">13</li>
 					</ul>
+
+					<div id="submitCustom">Done</div>
 					<div id="exitCustom">&laquo; Back</div>
+				</div>
+				<div id="currentChord" class="img-holder">
+					<img src="img/empty.png">
 				</div>
 			</section>
 		</div>
