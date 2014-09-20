@@ -23,11 +23,11 @@ ul {list-style: none;padding: 0;margin: 0;}
 
 a {text-decoration: none; color: #fefefe}
 :hover {
-    transition: all linear .3s;
-    -webkit-transition: all linear .3s;
-    -moz-transition: all linear .3s;
-    -ms-transition: all linear .3s;
-    -o-transition: all linear .3s;
+    transition: all linear .15s;
+    -webkit-transition: all linear .15s;
+    -moz-transition: all linear .15s;
+    -ms-transition: all linear .15s;
+    -o-transition: all linear .15s;
 }
 
 .left {
@@ -138,6 +138,9 @@ footer {
     padding: 0.4em 0.75em;
     border-right: #fefefe 1px solid;
 }
+.sidebar ul li.active {
+    background: rgb(101, 211, 253) !important;
+}
 .sidebar ul li:hover {
     background: rgba(127, 165, 233, 0.8);
     cursor: pointer;
@@ -158,8 +161,29 @@ footer {
     font-size: 0.9em;
 }
 
+#toCustom,
+#exitCustom {
+    font-weight: bold;
+    font-size: 0.88em;
+    color: rgb(152, 152, 214);
+    float: left;
+    left: 50%;
+    position: relative;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
 #exitCustom {
     position: absolute;
     width: 100%;
     bottom: -20px;
+}
+
+#toCustom:hover,
+#exitCustom:hover {
+    cursor: pointer;
+    opacity: .8;
 }
