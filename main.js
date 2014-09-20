@@ -1,6 +1,7 @@
 var stage;
-var initialX = 100,initialY = 100; // used to make sure the text stays in the same spot
+var initialX = 0,initialY = 0; // used to make sure the text stays in the same spot
 var text;
+var oldArr;
 
 function makeText(){
   text = document.getElementById("tArea");
@@ -11,6 +12,7 @@ function makeText(){
   var coordinates = [text.length]; //stores the coordinates when the canvas is redrawn
 
   for(i=0; i < lyrics.length; i++){
+
       var label =  new createjs.Text(lyrics[i],"bold 15px Helvetica","#000000");
       label.textAlign = "center";
       label.y = 0;
@@ -36,6 +38,7 @@ function makeText(){
       lines[i] = drag;
       stage.addChild(lines[i]);
   }
+
   stage.update();
 
 }
