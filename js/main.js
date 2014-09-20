@@ -1,5 +1,8 @@
 $(function() {
 
+	init();
+	$( window ).resize( init );
+
 	$( '#toCustom' ).click( toCustom );
 	$( '#exitCustom' ).click( exitCustom );
 	$( '#submitCustom' ).click( imgChanger );
@@ -15,6 +18,16 @@ $(function() {
 	});
 
 });
+
+function init() {
+	var width = $( window ).width();
+	var height = $( window ).height();
+
+	$( '#canv' ).attr({
+		'width' : width - 610,
+		'height' : height - 83
+	});
+}
 
 function toCustom() {
 	$( '.custom' ).css( 'left' , "0%" );
