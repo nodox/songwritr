@@ -1,5 +1,5 @@
+/*All the animation javascript functions*/
 var stage;
-
 var text;
 var oldArr;
 
@@ -33,12 +33,8 @@ function makeText(){
 
 
 			drag.on("pressmove",function(evt) {
-				// currentTarget will be the container that the event listener was added to:
 				evt.currentTarget.x = evt.stageX;
 				evt.currentTarget.y = evt.stageY;
-        //coordinates[i].x = evt.stageX;
-        //coordinates[i].y = evt.stageY;
-				// make sure to redraw the stage to show the change:
 				stage.update();
 			});
       lines[i] = drag;
@@ -49,22 +45,29 @@ function makeText(){
 
 }
 
-function makeChords(imgUrl){ // make an image of a specified chord
-  var bitmap = new createjs.Bitmap(imgUrl);
+function makeChords(imgUrl){
+  var offset; // make an image of a specified chord
+  var img = new Image();
+  img.src = imgUrl;
 
-  var drag = new createjs.Container();
-  drag.x = 10;
-  drag.y = 10;
+  var bitmap = new createjs.Bitmap(img); //create new image from bitmap
+  bitmap.x = 0;
+  bitmap.y = 0;
+  bitmap.cursor = "pointer"; //makes it so the cursor doesn't change
 
-  drag.addChild(bitmap);
-  drag.on("pressmove",function(evt) {
-    // currentTarget will be the container that the event listener was added to:
+  var dragImg = new createjs.Container(); //add to draggable container
+  dragImg.x = 10;
+  dragImg.y = 10;
+
+
+  bitmap.on("pressmove",function(evt) {
     evt.currentTarget.x = evt.stageX;
     evt.currentTarget.y = evt.stageY;
-    
-    // make sure to redraw the stage to show the change:
     stage.update();
   });
-  stage.addChild(drag);
+
+  dragImg.addChild(bitmap);
+
+  stage.addChild(dragImg);
   stage.update();
 }
