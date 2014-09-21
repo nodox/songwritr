@@ -80,14 +80,42 @@ form#signIn #inputs input {
 	margin: 5px 0;
 }
 
-form#signIn #actions input {
-	font-size: 1em;
+form#signIn #actions #submit {
+	font-size: 1.4em;
 	margin: 0 0 30px;
 	border: none;
+	width: auto;
 }
 form#signIn #actions a {
 	font-size: 1em;
 	width: 100%;
 	float: left;
 	clear: both;
+	margin: 4px 0;
+}
+
+
+/* projects page */
+
+ul.projects {
+    margin-top: 50px;
+    text-align: center;
+}
+
+ul.projects li {
+    width: 250px;
+    height: 150px;
+    background: rgba(254, 254, 254, 0.4);
+    display: inline-block;
+    margin: 20px 10px;
+    border-radius: 2px;
+    font-size: 1.5em;
+}
+ul.projects li:hover {
+	background: rgb(101, 211, 253);
+	cursor: pointer;
+}
+
+ul.projects li a {
+    line-height: 150px;
 }

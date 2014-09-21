@@ -85,19 +85,6 @@ function saveImage(){
 
 
 // added and fucked up by steven from here down will break!!!
-function findChord(string) {
-
-	var chords = "";
-	var temps = [];
-
-	for (i = 0; i < string.length; i++) {
-		if (string[i] == "%") {
-			temps.push(i);
-		}
-	}
-	chords = string.substring(temps[i], temps[i]);
-}
-	
 function findChord(arr) {
 
 	//var string = "ABCD%nEFGHI%nJKLM%nNO";
@@ -110,4 +97,17 @@ function findChord(arr) {
 			chords.push(temps[j]);
 	}
 
+}
+
+function findChord(string) {
+
+	var chords = "";
+	var temps = [];
+
+	for (i = 0; i < string.length; i++) {
+		if (string[i] == "%") {
+			temps.push(i);
+		}
+	}
+	chords = string.substring(temps[i], temps[i]);
 }
