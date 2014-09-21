@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Songwritr</title>
+	<meta name="viewport" content="width=device-width, initial-scale=0.8">
+	<link rel="icon" type="image/ico" href="img/icon.png"/>
+	<!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://code.createjs.com/easeljs-0.7.0.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/animation.js"></script>
+	<script src="js/easeljs-0.7.1.min.js"></script>
+	<script src="js/abcjs_editor_1.12-min.js"></script>
+	<script src="js/canvas2image.js"></script>
+	<script src="js/base62.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onLoad = "initCreate()">
+
+	<nav class="main-nav">
+		<div class="wrap">
+			<div class="logo left">
+				<a href="index.html">Songwritr</a>
+			</div>
+			<ul class="links right">
+				<li id="about">
+					<a href="/about.html">About</a>
+				</li>
+				<li id="login">
+					<a href="projects.html">My Projects</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!-- main -->
+	<div class="main">
+		<div class="canvas">
+			<div class="wrap">
+
+				<form id="createSong">
+					<h1>New Song</h1>
+						<input id="songTitle" type="text" placeholder="Your Title Here" required>   
+						<input id="subtitle" type="text" placeholder="Subtitle" required>
+						<input id="measure" type="text" placeholder="4/4, 3/4, etc." required>
+						<input id="key" type="text" placeholder="C, Em, A#" required>
+						<a id="submit" class="button">
+							Create
+						</a>
+				</form>
+
+				<textarea  name="musicSheet" id="musicSheet" cols="80" rows="15" style="margin: 2px; width: 0px; height: 0px; visibility: hidden;">
+				</textarea>
+				<div id="paper0" style="width:805"></div>
+				<script type="text/javascript">
+						window.onload = function() {
+							abc_editor = new ABCJS.Editor("musicSheet", { paper_id: "paper0", midi_id:"midi", warnings_id:"warnings" });
+						}
+				</script>
+
+
+
+			</div>
+		</div>
+		<div class="sidebar">
+			<section class="chord-chooser">
+				<div class="quickadd">
+					<div class="title">Quick Notes</div>
+					<ul>
+						<li value="E2">E</li>
+						<li value="F2">F#</li>
+						<li value="G2">G#</li>
+						<li value="A2">A</li>
+						<li value="B2">B</li>
+						<li value="C2">C#</li>
+						<li value="D2">D#</li>
+					</ul>
+					<div id="toCustom">Other Notes &raquo;</div>
+<!-- 					<div class="title">Note vs Rest</div>
+					<ul>
+						<li value="m">Note</li>
+						<li value="m">Rest</li>
+					</ul> -->
+					<div class="title">Note Length</div>
+					<ul class="opts">
+						<li value="">8th</li>
+						<li value=" ">Quarter</li>
+						<li value=" ">Half</li>
+						<li value=" ">Whole</li>
+					</ul>
+
+					<div class="title">Repeat</div>
+					<ul>
+						<li value="|:">Begin Repeat</li>
+						<li value=":|">End Repeat</li>
+					</ul>
+
+					<div class="title">Line Management</div>
+					<ul>
+						<li value="|">Bar Line</li>
+						<li value="\n">Next Line</li>
+					</ul>
+				</div>
+				<div class="custom">
+
+					<ul class="root">
+						<li value="C">C</li>
+						<li value="D">D</li>
+						<li value="E">E</li>
+						<li value="F">F</li>
+						<li value="G">G</li>
+						<li value="A">A</li>
+						<li value="B">B</li>
+					</ul>
+
+					<ul class="sharp">
+						<li value="s">#</li>
+						<li value="b">b</li>
+					</ul>
+
+					<div id="submitCustom" class="button">Done</div>
+					<div id="exitCustom">&laquo; Back</div>
+				</div>
+			<div id="addButton" class="button">Add to Canvas</div>
+			</section>
+			<!-- <div id="drawButton" class="button">Free Draw</div> -->
+			<div id="saveAs" class="button">Save as Image</div>
+		</div>
+	</div><!-- end main-->
+
+	<footer>
+		<div class="wrap">
+			<div class="copyright left">(c) 2014</div>
+			<ul class="links right">
+				<li id="unhackathon"> Made at
+					<a href="www.unhackathon.org">Unhackathon</a>
+				</li>
+			</ul>
+		</div>
+	</footer>
+
+
+</body>
+</html>
