@@ -1,4 +1,4 @@
-function generateGrid(canvas, bpm, grouping) {
+function generateGrid(canvas, bpm, grouping, color) {
 
             var canvas = document.getElementById('myCanvas');
 
@@ -14,11 +14,13 @@ function generateGrid(canvas, bpm, grouping) {
 
                 context.beginPath();
 
+                context.lineWidth = 0.25;
+
                 context.moveTo(i * distanceBetweenLines, 0);
 
                 context.lineTo(i * distanceBetweenLines, canvas.height);
 
-                context.strokeStyle = '#7700ff';
+                context.strokeStyle = color || '#7700ff';
 
                 context.stroke();
 
@@ -28,13 +30,14 @@ function generateGrid(canvas, bpm, grouping) {
 
                 context.beginPath();
 
-                context.lineWidth = 2;
+                context.lineWidth = 0.75;
 
                 context.moveTo(i * distanceBetweenLines, 0);
 
                 context.lineTo(i * distanceBetweenLines, canvas.height);
 
-                context.strokeStyle = '#7700ff';
+        
+        context.strokeStyle = color || '#7700ff';
 
                 context.stroke();
 
@@ -44,13 +47,13 @@ function generateGrid(canvas, bpm, grouping) {
 
                 context.beginPath();
 
-                context.lineWidth = 0.5;
+                context.lineWidth = 0.25;
 
                 context.moveTo(0, i * 50);
 
                 context.lineTo(canvas.width, i * 50);
 
-                context.strokeStyle = '#7700ff';
+                context.strokeStyle = color || '#7700ff';
 
                 context.stroke();
 
