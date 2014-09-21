@@ -1,13 +1,17 @@
+$(function() {
+	generateGrid(document.getElementById("canv"), 120, 4, '#7700ff');
+	$('#drawButton').click( draw )
+
+});
+
+function draw() {
+	enableDrawing(document.getElementById("canv"), document.getElementById("drawButton"), "#000000");
+}
+
 
 function generateGrid(canvas, bpm, grouping, color) {
 
-            var canvas = document.getElementById('myCanvas');
-
-            var context = canvas.getContext('2d');
-
-            var bpm = 140;
-
-            var grouping = 3;
+            context = canvas.getContext("2d");
 
             var distanceBetweenLines = (1 / bpm) * 4000;
 
