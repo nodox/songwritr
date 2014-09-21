@@ -239,7 +239,7 @@ footer {
 #tArea {
     position: absolute;
     top: 0;
-    bottom: 13px; 
+    bottom: 13px;
     left: 2px;
     width: 300px;
 }
@@ -247,6 +247,7 @@ footer {
     position: absolute;
     left: 310px;
     top: 2px;
+    background: #FFFFFF;
 }
 
 
