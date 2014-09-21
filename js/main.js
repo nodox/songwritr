@@ -38,18 +38,29 @@ function exitCustom() {
 
 function imgChanger() {
 	var path = findImg();
-	console.log( path );
 	$( '#currentChord img' ).attr( 'src', path );
 	exitCustom();
+}
+
+function notImg(url) {
+	var img;
+    img = new ActiveXObject( 'Scripting.FileSystemObject' );
+    return img.FileExists( url );
 }
 
 function findImg() {
 	var imgPath = "img/";
 	$( '.custom' ).find( '.active' ).each( function() {
-		imgPath += $( this ).text();
+		imgPath += $( this ).attr( 'value' );
 	});
 	imgPath += ".jpg";
 
-	makeChords("imgPath");
+<<<<<<< HEAD
+	if ( notImg( imgPath ) )
+		imgPath = "img/empty.png";
+
+=======
+	makeChords(imgPath);
+>>>>>>> 9a1f0b46ceadbe350f2381f31f0990fe052be6cc
 	return imgPath;
 }
