@@ -39,9 +39,10 @@ function exitCustom() {
 /*public*/ function imgChanger() {
 	var path = findImg();
 	$( '#currentChord img' ).attr( 'src', path );
-	
-	makeChords(path);
 	exitCustom();
+	
+	//insert on canvas	
+	makeChords(path);
 }
 
 function notImg(url) {
