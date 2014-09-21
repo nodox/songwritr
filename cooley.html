@@ -25,10 +25,10 @@
 			</div>
 			<ul class="links right">
 				<li id="about">
-					<a href="/about" target="_blank">About</a>
+					<a href="/about.html">About</a>
 				</li>
 				<li id="login">
-					<a href="/login" target="_blank">Login</a>
+					<a href="projects.html">My Projects</a>
 				</li>
 			</ul>
 		</div>
@@ -45,10 +45,6 @@ M: 4/4
 L: 1/8
 R: Composed by me
 K: Emin
-|:D2|EB{c}BA B2 EB|~B2 AB dBAG|FDAD BDAD|FDAD dAFD|
-EBBA B2 EB|B2 AB defg|afe^c dBAF|DEFD E2:|
-|:gf|eB B2 efge|eB B2 gedB|A2 FA DAFA|A2 FA defg|
-eB B2 eBgB|eB B2 defg|afe^c dBAF|DEFD E2:|
 |:D2|EB{c}BA B2 EB|~B2 AB dBAG|FDAD BDAD|FDAD dAFD|
 EBBA B2 EB|B2 AB defg|afe^c dBAF|DEFD E2:|
 |:gf|eB B2 efge|eB B2 gedB|A2 FA DAFA|A2 FA defg|
@@ -70,21 +66,39 @@ eB B2 eBgB|eB B2 defg|afe^c dBAF|DEFD E2:|
 				<div class="quickadd">
 					<div class="title">Quick Notes</div>
 					<ul>
-						<li value="E">E</li>
-						<li value="Fs">F#</li>
-						<li value="Gs">G#</li>
-						<li value="A">A</li>
-						<li value="B">B</li>
-						<li value="Cs">C#</li>
-						<li value="Ds">D#</li>
-						<li value="">Rest</li>
-					</ul>
-					<ul class="opts">
-						<li value="m">minor</li>
-						<li value="sus">sus</li>
-						<li value="dim">dim</li>
+						<li value="E2">E</li>
+						<li value="F2">F#</li>
+						<li value="G2">G#</li>
+						<li value="A2">A</li>
+						<li value="B2">B</li>
+						<li value="C2">C#</li>
+						<li value="D2">D#</li>
 					</ul>
 					<div id="toCustom">Other Notes &raquo;</div>
+<!-- 					<div class="title">Note vs Rest</div>
+					<ul>
+						<li value="m">Note</li>
+						<li value="m">Rest</li>
+					</ul> -->
+					<div class="title">Note Length</div>
+					<ul class="opts">
+						<li value="">8th</li>
+						<li value=" ">Quarter</li>
+						<li value=" ">Half</li>
+						<li value=" ">Whole</li>
+					</ul>
+
+					<div class="title">Repeat</div>
+					<ul>
+						<li value="|:">Begin Repeat</li>
+						<li value=":|">End Repeat</li>
+					</ul>
+
+					<div class="title">Line Management</div>
+					<ul>
+						<li value="|">Bar Line</li>
+						<li value="\n">Next Line</li>
+					</ul>
 				</div>
 				<div class="custom">
 
@@ -106,8 +120,9 @@ eB B2 eBgB|eB B2 defg|afe^c dBAF|DEFD E2:|
 					<div id="submitCustom" class="button">Done</div>
 					<div id="exitCustom">&laquo; Back</div>
 				</div>
+			<div id="addButton" class="button">Add to Canvas</div>
 			</section>
-			<div id="drawButton" class="button">Draw</div>
+			<!-- <div id="drawButton" class="button">Free Draw</div> -->
 			<div id="saveAs" class="button">Save as Image</div>
 		</div>
 	</div><!-- end main-->

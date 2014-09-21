@@ -8,6 +8,9 @@ $(function() {
 	$( '#submitCustom' ).click( imgChanger );
 	$( '#saveAs' ).click( saveImage );
 
+	$( '#addButton ').click( addNote );
+	$( '#submit' ).click( createSong );
+
 	$( '.sidebar ul li' ).click( function() {
 		var $t = $( this );
 
@@ -38,6 +41,33 @@ function toCustom() {
 }
 function exitCustom() {
 	$( '.custom' ).css( 'left' , "100%" );
+}
+
+function addNote() {
+	var text = $( 'textarea' ).text();
+	var note = $( '.quickadd .active' ).attr('value');
+	if ( note ) {
+		$( 'textarea' ).text( text + note );
+		$( 'textarea' ).keyup();
+		$( '.quickadd .active' ).removeClass( 'active' );
+	}
+}
+
+function createSong() {
+	var title = "T: " + $( '#songTitle' ).text();
+	var measure = "M: " + $( '#measure' ).text();
+	var subtitle = "R: " + $( '#subtitle' ).text();
+	var key = "K: " + $( '#key' ).text();
+
+	var text = "X: 1\n" + title + measure + "L: 1/8" + subtitle + key + "|:";
+
+	$( '#createSong' ).css({
+		'top' : "-100%",
+		'opacity' : '0'
+	});
+	$( 'textarea' ).text( text );
+	$( 'textarea' ).keyup();
+
 }
 
 /*public*/ function imgChanger() {
