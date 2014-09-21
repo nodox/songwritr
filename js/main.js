@@ -50,5 +50,6 @@ function findImg() {
 	});
 	imgPath += ".jpg";
 
+	makeChords(imgPath);
 	return imgPath;
 }
