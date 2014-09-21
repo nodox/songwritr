@@ -70,7 +70,7 @@ function handleImageLoad(event){
 
 //remove chord when it's double clicked
   bitmap.on("dblclick",function(evt){
-    stage.remove(bitmap);
+    stage.removeChild(bitmap);
   });
 //allows the image to be dragged
 bitmap.on("pressmove",function(evt) {
