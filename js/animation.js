@@ -1,25 +1,27 @@
 var stage;
-var initialX = 100,initialY = 100; // used to make sure the text stays in the same spot
+
 var text;
+var oldArr;
 
 function makeText(){
   text = document.getElementById("tArea");
   stage = stage = new createjs.Stage("canv");
-
+  var initialX = 0,initialY = 0;
   var lyrics = text.value.split("\n"); //makes an array from the lines
   var lines = [text.length]; //array of labels for the array
   var coordinates = [text.length]; //stores the coordinates when the canvas is redrawn
 
   for(i=0; i < lyrics.length; i++){
-      var label =  new createjs.Text(lyrics[i],"bold 15px Helvetica","#000000");
-      label.textAlign = "center";
-      label.y = Math.random()*300;
-      label.x = Math.random()*300;
 
+      var label =  new createjs.Text(lyrics[i],"bold 15px Helvetica","#000000");
+      label.textAlign = "left";
+      label.y = 0;
+      label.x = 0;
       /*var coor = {x : initialX, y: initialY}; //makes an object with the coordinates */
       var drag = new createjs.Container();
-      drag.x = initialX;
+      drag.x = 30;
       drag.y = initialY;
+      var initialY = initialY+50;
     /*  coordinates[i] = coor; //store the coordinates*/
       drag.addChild(label);
 
@@ -36,6 +38,7 @@ function makeText(){
       lines[i] = drag;
       stage.addChild(lines[i]);
   }
+
   stage.update();
 
 }
