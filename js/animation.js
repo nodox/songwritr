@@ -14,7 +14,7 @@ function initCreate(){
 		stage.mouseMoveOutside = true;
 }
 
-function makeText(){
+function makeText(distanceBetweenLines){
   stage.removeAllChildren();
   stage.update();
 
@@ -38,8 +38,17 @@ function makeText(){
 
 
 			drag.on("pressmove",function(evt) {
-				evt.currentTarget.x = evt.stageX;
-				evt.currentTarget.y = evt.stageY;
+				if(distanceBetweenLines === undefined){
+					evt.currentTarget.x = evt.stageX;
+					evt.currentTarget.y = evt.stageY;	
+				}
+				// currentTarget will be the container that the event listener was added to:
+				//snap to grid
+				evt.currentTarget.x = floor(evt.stageX/distanceBetweenLines)*distanceBetweenLines;
+				evt.currentTarget.y = floor(evt.stageY/distanceBetweenLines)*distanceBetweenLines;
+        //coordinates[i].x = evt.stageX;
+        //coordinates[i].y = evt.stageY;
+				// make sure to redraw the stage to show the change:
 				stage.update();
 			});
       lines[i] = drag;
