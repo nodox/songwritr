@@ -1,6 +1,6 @@
 $(function() {
 	generateGrid(document.getElementById("canv"), 120, 4, '#7700ff');
-	$('#drawButton').click( draw )
+	$('#drawButton').click( draw );
 
 });
 
