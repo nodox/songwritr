@@ -76,3 +76,9 @@ function quickChord( $t ) {
 
 	return path;
 }
+
+function saveImage(){
+	var canv = document.getElementById("canv");
+
+	Canvas2Image.saveAsPNG(canv);
+}

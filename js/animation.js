@@ -58,14 +58,13 @@ function makeChords(imgUrl){ // make an image of a specified chord
 
   drag.addChild(bitmap);
   drag.on("pressmove",function(evt) {
-        // currentTarget will be the container that the event listener was added to:
-        evt.currentTarget.x = evt.stageX;
-        evt.currentTarget.y = evt.stageY;
-        //coordinates[i].x = evt.stageX;
-        //coordinates[i].y = evt.stageY;
-        // make sure to redraw the stage to show the change:
-        stage.update();
-      });
+    // currentTarget will be the container that the event listener was added to:
+    evt.currentTarget.x = evt.stageX;
+    evt.currentTarget.y = evt.stageY;
+    
+    // make sure to redraw the stage to show the change:
+    stage.update();
+  });
   stage.addChild(drag);
   stage.update();
 }
