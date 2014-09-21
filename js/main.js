@@ -9,12 +9,15 @@ $(function() {
 
 	$( '.sidebar ul li' ).click( function() {
 		var $t = $( this );
+
 		if ( $t.hasClass( 'active' ) ) {
 			$t.removeClass( 'active' );
 		} else {
 			$t.siblings().removeClass( 'active' );
 			$t.addClass( 'active' );
 		}
+		if ( $t.parent().parent().hasClass( 'quickadd' ) )
+			quickChord();
 	});
 
 });
@@ -36,19 +39,37 @@ function exitCustom() {
 	$( '.custom' ).css( 'left' , "100%" );
 }
 
-function imgChanger() {
+/*public*/ function imgChanger() {
 	var path = findImg();
-	console.log( path );
 	$( '#currentChord img' ).attr( 'src', path );
 	exitCustom();
+
+	//insert on canvas
+	makeChords(path);
+}
+
+function notImg(url) {
+	var img;
+    img = new ActiveXObject( 'Scripting.FileSystemObject' );
+    return img.FileExists( url );
 }
 
 function findImg() {
 	var imgPath = "img/";
 	$( '.custom' ).find( '.active' ).each( function() {
-		imgPath += $( this ).text();
+		imgPath += $( this ).attr( 'value' );
 	});
 	imgPath += ".jpg";
 
 	return imgPath;
+}
+
+function quickChord() {
+	var path = "img/";
+	path += $( '.quickadd' ).find( '.active' ).attr( 'value' );
+	path += ".jpg";
+
+	$( '#currentChord img' ).attr( 'src', path );
+
+	return path;
 }
