@@ -50,6 +50,6 @@ function findImg() {
 	});
 	imgPath += ".jpg";
 
-	makeChords(imgPath);
+	makeChords("imgPath");
 	return imgPath;
 }
