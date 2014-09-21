@@ -9,12 +9,16 @@ $(function() {
 
 	$( '.sidebar ul li' ).click( function() {
 		var $t = $( this );
+
 		if ( $t.hasClass( 'active' ) ) {
 			$t.removeClass( 'active' );
 		} else {
 			$t.siblings().removeClass( 'active' );
 			$t.addClass( 'active' );
 		}
+
+		if ( $t.parent().hasClass( 'quickadd' ) )
+			quickChord();
 	});
 
 });
@@ -40,8 +44,8 @@ function exitCustom() {
 	var path = findImg();
 	$( '#currentChord img' ).attr( 'src', path );
 	exitCustom();
-	
-	//insert on canvas	
+
+	//insert on canvas
 	makeChords(path);
 }
 
@@ -59,4 +63,16 @@ function findImg() {
 	imgPath += ".jpg";
 
 	return imgPath;
+}
+
+function quickChord() {
+	var path = "img/";
+	$( '.quickadd' ).find( '.active' ).each( function() {
+		path += $( this ).attr( 'value' );
+	});
+	path += ".jpg";
+
+	$( '#currentChord img' ).attr( 'src', path );
+
+	return path;
 }
