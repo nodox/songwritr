@@ -7,7 +7,7 @@ function initCreate(){
   stage = stage = new createjs.Stage("canv");
 }
 
-function makeText(){
+function makeText(distanceBetweenLines){
   stage.removeAllChildren();
   stage.update();
 
@@ -33,9 +33,14 @@ function makeText(){
 
 
 			drag.on("pressmove",function(evt) {
+				if(distanceBetweenLines === undefined){
+					evt.currentTarget.x = evt.stageX;
+					evt.currentTarget.y = evt.stageY;	
+				}
 				// currentTarget will be the container that the event listener was added to:
-				evt.currentTarget.x = evt.stageX;
-				evt.currentTarget.y = evt.stageY;
+				//snap to grid
+				evt.currentTarget.x = floor(evt.stageX/distanceBetweenLines)*distanceBetweenLines;
+				evt.currentTarget.y = floor(evt.stageY/distanceBetweenLines)*distanceBetweenLines;
         //coordinates[i].x = evt.stageX;
         //coordinates[i].y = evt.stageY;
 				// make sure to redraw the stage to show the change:
