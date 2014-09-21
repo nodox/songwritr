@@ -68,6 +68,11 @@ function handleImageLoad(event){
   cont.y = 10;
   cont.addChild(bitmap);
 
+//remove chord when it's double clicked
+  bitmap.on("dblclick",function(evt){
+    stage.remove(bitmap);
+  });
+//allows the image to be dragged
 bitmap.on("pressmove",function(evt) {
 				evt.currentTarget.x = evt.stageX;
 				evt.currentTarget.y = evt.stageY;
