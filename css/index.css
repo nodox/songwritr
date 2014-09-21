@@ -1,0 +1,121 @@
+h1 {
+	font-size: 7em;
+	margin: 1.2em 0 0;
+}
+h3 {
+    font-size: 3em;
+    margin: 0 0 1em;
+}
+.button {
+	font-size: 2em;
+}
+
+.main {
+	background: url(../img/intro.jpg);
+	background-size: cover;
+	color: #fefefe;
+	overflow: hidden;
+}
+
+.intro {
+	opacity: 1;
+	transition: opacity linear .15s;
+    -webkit-transition: opacity linear .15s;
+    -moz-transition: opacity linear .15s;
+    -ms-transition: opacity linear .15s;
+    -o-transition: opacity linear .15s;
+}
+.active .intro {
+	opacity: 0;
+}
+
+form#signIn {
+	width: 500px;
+	text-align: center;
+	background: rgba(254, 254, 254, 0.4);
+	border-radius: 3px;
+	z-index: 20;
+	position: absolute;
+	padding: 1em .5em;
+	left: 50%;
+	top: 100%;
+	-webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+	
+	transition: top linear .15s;
+    -webkit-transition: top linear .15s;
+    -moz-transition: top linear .15s;
+    -ms-transition: top linear .15s;
+    -o-transition: top linear .15s;
+}
+
+.active form#signIn {
+	top: 140px;
+}
+
+
+form#signIn h1 {
+	font-size: 5em;
+	margin: 0;
+}
+form#signIn fieldset {
+	border: none;
+}
+
+form#signIn #inputs {
+	padding: 0;
+	margin: 1em 0;
+}
+
+form#signIn #inputs input {
+	border: solid rgb(101, 211, 253) 1px;
+	background: rgba(254, 254, 254, .98);
+	border-radius: 5px;
+	padding: .5em;
+	font-size: 1em;
+	width: 400px;
+	margin: 5px 0;
+}
+
+form#signIn #actions #submit {
+	font-size: 1.4em;
+	margin: 0 0 30px;
+	border: none;
+	width: auto;
+}
+form#signIn #actions a {
+	font-size: 1em;
+	width: 100%;
+	float: left;
+	clear: both;
+	margin: 4px 0;
+}
+
+
+/* projects page */
+
+ul.projects {
+    margin-top: 50px;
+    text-align: center;
+}
+
+ul.projects li {
+    width: 250px;
+    height: 150px;
+    background: rgba(254, 254, 254, 0.4);
+    display: inline-block;
+    margin: 20px 10px;
+    border-radius: 2px;
+    font-size: 1.5em;
+}
+ul.projects li:hover {
+	background: rgb(101, 211, 253);
+	cursor: pointer;
+}
+
+ul.projects li a {
+    line-height: 150px;
+}

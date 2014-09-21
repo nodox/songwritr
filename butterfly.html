@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Songwritr</title>
+	<meta name="viewport" content="width=device-width, initial-scale=0.8">
+	<link rel="icon" type="image/ico" href="img/icon.png"/>
+	<!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://code.createjs.com/easeljs-0.7.0.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/animation.js"></script>
+	<script src="js/easeljs-0.7.1.min.js"></script>
+	<script src="js/abcjs_editor_1.12-min.js"></script>
+	<script src="js/canvas2image.js"></script>
+	<script src="js/base64.js"></script>
+	<script src="js/songwritrScripts.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body onLoad = "initCreate()">
+
+	<nav class="main-nav">
+		<div class="wrap">
+			<div class="logo left">
+				<a href="index.html">Songwritr</a>
+			</div>
+			<ul class="links right">
+				<li id="about">
+					<a href="/about.html">About</a>
+				</li>
+				<li id="login">
+					<a href="projects.html">My Projects</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!-- main -->
+	<div class="main">
+		<div class="canvas">
+			<div class="wrap">
+				
+				<textarea id = "tArea" rows = "30" cols = "50" onkeyup = "makeText()">
+				</textarea>
+				
+				<canvas id = "canv" width = "500" height = "700"> where the text is rendered
+					Canvas goes here
+				</canvas>
+
+
+
+			</div>
+		</div>
+		<div class="sidebar">
+			<section class="chord-chooser">
+				<div class="quickadd">
+					<div class="title">Quick Chords</div>
+					<ul>
+						<li value="G">G</li>
+						<li value="Am">Am</li>
+						<li value="Bm">Bm</li>
+						<li value="C">C</li>
+						<li value="D">D</li>
+						<li value="Em">Em</li>
+					</ul>
+					<div id="toCustom">Custom Chord &raquo;</div>
+				</div>
+				<div class="custom">
+
+					<ul class="root">
+						<li value="C">C</li>
+						<li value="D">D</li>
+						<li value="E">E</li>
+						<li value="F">F</li>
+						<li value="G">G</li>
+						<li value="A">A</li>
+						<li value="B">B</li>
+					</ul>
+
+					<ul class="sharp">
+						<li value="s">#</li>
+						<li value="b">b</li>
+					</ul>
+					<ul class="opts">
+						<li value="m">minor</li>
+						<li value="sus">sus</li>
+						<li value="dim">dim</li>
+					</ul>
+					<ul class="upper">
+						<li value="6">6</li>
+						<li value="7">7</li>
+						<li value="9">9</li>
+						<li value="11">11</li>
+					</ul>
+
+					<div id="submitCustom" class="button">Done</div>
+					<div id="exitCustom">&laquo; Back</div>
+				</div>
+				<div id="currentChord" class="img-holder">
+					<img src="img/empty.png" />
+				</div>
+			</section>
+			<div id="drawButton" class="button">Draw</div>
+			<div id="saveAs" class="button">Save as Image</div>
+		</div>
+	</div><!-- end main-->
+
+	<footer>
+		<div class="wrap">
+			<div class="copyright left">(c) 2014</div>
+			<ul class="links right">
+				<li id="unhackathon"> Made at
+					<a href="www.unhackathon.org">Unhackathon</a>
+				</li>
+			</ul>
+		</div>
+	</footer>
+
+
+</body>
+</html>
