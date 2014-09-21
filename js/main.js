@@ -16,8 +16,7 @@ $(function() {
 			$t.siblings().removeClass( 'active' );
 			$t.addClass( 'active' );
 		}
-
-		if ( $t.parent().hasClass( 'quickadd' ) )
+		if ( $t.parent().parent().hasClass( 'quickadd' ) )
 			quickChord();
 	});
 
@@ -67,9 +66,7 @@ function findImg() {
 
 function quickChord() {
 	var path = "img/";
-	$( '.quickadd' ).find( '.active' ).each( function() {
-		path += $( this ).attr( 'value' );
-	});
+	path += $( '.quickadd' ).find( '.active' ).attr( 'value' );
 	path += ".jpg";
 
 	$( '#currentChord img' ).attr( 'src', path );
