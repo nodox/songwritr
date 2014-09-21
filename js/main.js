@@ -55,8 +55,12 @@ function findImg() {
 	});
 	imgPath += ".jpg";
 
+<<<<<<< HEAD
 	if ( notImg( imgPath ) )
 		imgPath = "img/empty.png";
 
+=======
+	makeChords(imgPath);
+>>>>>>> 9a1f0b46ceadbe350f2381f31f0990fe052be6cc
 	return imgPath;
 }

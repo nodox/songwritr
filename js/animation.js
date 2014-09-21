@@ -3,9 +3,15 @@ var stage;
 var text;
 var oldArr;
 
-function makeText(){
-  text = document.getElementById("tArea");
+function initCreate(){
   stage = stage = new createjs.Stage("canv");
+}
+
+function makeText(){
+  stage.removeAllChildren();
+  stage.update();
+
+  text = document.getElementById("tArea");
   var initialX = 0,initialY = 0;
   var lyrics = text.value.split("\n"); //makes an array from the lines
   var lines = [text.length]; //array of labels for the array
@@ -41,4 +47,16 @@ function makeText(){
 
   stage.update();
 
+}
+
+function makeChords(imgUrl){ // make an image of a specified chord
+  var bitmap = new createjs.Bitmap(imgUrl);
+
+  var drag = new createjs.Container();
+  drag.x = 10;
+  drag.y = 10;
+
+  drag.addChild(bitmap);
+  stage.addChild(drag);
+  stage.update();
 }
