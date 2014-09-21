@@ -7,12 +7,13 @@
 	<!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://code.createjs.com/easeljs-0.7.0.min.js"></script>
-	<script src="js/main.js"></script>
 	<script src="js/animation.js"></script>
 	<script src="js/easeljs-0.7.1.min.js"></script>
 	<script src="js/abcjs_editor_1.12-min.js"></script>
 	<script src="js/canvas2image.js"></script>
-	<script src="js/base62.js"></script>
+	<script src="js/base64.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/index.js"></script>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/index.css">
 </head>
@@ -21,7 +22,9 @@
 
 	<nav class="main-nav">
 		<div class="wrap">
-			<div class="logo left">Songwritr</div>
+			<div class="logo left">
+				<a href="#">Songwritr</a>
+			</div>
 			<ul class="links right">
 				<li id="about">
 					<a href="/about" target="_blank">About</a>
@@ -32,12 +35,30 @@
 			</ul>
 		</div>
 	</nav>
+	
 	<!-- main -->
 	<div class="main">
 		<div class="wrap">
-			<h1>Songwritr</h1>
-			<h3>Music at your fingertips</h3>
-			<div class="button" id="getStarted">Get started</div>
+
+			<div class="intro">
+				<h1>Songwritr</h1>
+				<h3>Music at your fingertips</h3>
+
+				<div class="button" id="getStarted">Get Started</div>
+			</div>
+
+			<form id="signIn">
+				<h1>Log In</h1>
+				<fieldset id="inputs">
+					<input id="username" type="text" placeholder="Username" autofocus required>   
+					<input id="password" type="password" placeholder="Password" required>
+				</fieldset>
+				<fieldset id="actions">
+					<input type="submit" id="submit" value="Log in" class="button">
+					<a href="#">Forgot your password?</a><a href="#">Register</a>
+				</fieldset>
+			</form>
+
 		</div>
 	</div><!-- end main-->
 
