@@ -36,9 +36,11 @@ function exitCustom() {
 	$( '.custom' ).css( 'left' , "100%" );
 }
 
-function imgChanger() {
+/*public*/ function imgChanger() {
 	var path = findImg();
 	$( '#currentChord img' ).attr( 'src', path );
+	
+	makeChords(path);
 	exitCustom();
 }
 
@@ -55,12 +57,5 @@ function findImg() {
 	});
 	imgPath += ".jpg";
 
-<<<<<<< HEAD
-	if ( notImg( imgPath ) )
-		imgPath = "img/empty.png";
-
-=======
-	makeChords(imgPath);
->>>>>>> 9a1f0b46ceadbe350f2381f31f0990fe052be6cc
 	return imgPath;
 }
