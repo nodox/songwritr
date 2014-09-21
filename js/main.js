@@ -38,17 +38,25 @@ function exitCustom() {
 
 function imgChanger() {
 	var path = findImg();
-	console.log( path );
 	$( '#currentChord img' ).attr( 'src', path );
 	exitCustom();
+}
+
+function notImg(url) {
+	var img;
+    img = new ActiveXObject( 'Scripting.FileSystemObject' );
+    return img.FileExists( url );
 }
 
 function findImg() {
 	var imgPath = "img/";
 	$( '.custom' ).find( '.active' ).each( function() {
-		imgPath += $( this ).text();
+		imgPath += $( this ).attr( 'value' );
 	});
 	imgPath += ".jpg";
+
+	if ( notImg( imgPath ) )
+		imgPath = "img/empty.png";
 
 	return imgPath;
 }
