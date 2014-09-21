@@ -2,9 +2,16 @@
 var stage;
 var text;
 var oldArr;
+var offset;
 
 function initCreate(){
   stage = stage = new createjs.Stage("canv");
+  // enable touch interactions if supported on the current device:
+		createjs.Touch.enable(stage);
+
+		// enabled mouse over / out events
+		stage.enableMouseOver(10);
+		stage.mouseMoveOutside = true;
 }
 
 function makeText(){
@@ -23,12 +30,10 @@ function makeText(){
       label.textAlign = "left";
       label.y = 0;
       label.x = 0;
-      /*var coor = {x : initialX, y: initialY}; //makes an object with the coordinates */
       var drag = new createjs.Container();
       drag.x = 30;
       drag.y = initialY;
       initialY += 50;
-    /*  coordinates[i] = coor; //store the coordinates*/
       drag.addChild(label);
 
 
@@ -49,25 +54,25 @@ function makeChords(imgUrl){
   var offset; // make an image of a specified chord
   var img = new Image();
   img.src = imgUrl;
-
-  var bitmap = new createjs.Bitmap(img); //create new image from bitmap
-  bitmap.x = 0;
-  bitmap.y = 0;
-  bitmap.cursor = "pointer"; //makes it so the cursor doesn't change
-
-  var dragImg = new createjs.Container(); //add to draggable container
-  dragImg.x = 10;
-  dragImg.y = 10;
+  img.onload = handleImageLoad; //call other on imaghe load method to deal with issues calling methods before image is laoded
 
 
-  bitmap.on("pressmove",function(evt) {
-    evt.currentTarget.x = evt.stageX;
-    evt.currentTarget.y = evt.stageY;
-    stage.update();
-  });
+}
 
-  dragImg.addChild(bitmap);
+function handleImageLoad(event){
+  var image = event.target; //set the image file to the Image this was called on
 
-  stage.addChild(dragImg);
+  var bitmap = new createjs.Bitmap(image);
+  var cont = new createjs.Container();
+  cont.x = 10;
+  cont.y = 10;
+  cont.addChild(bitmap);
+
+bitmap.on("pressmove",function(evt) {
+				evt.currentTarget.x = evt.stageX;
+				evt.currentTarget.y = evt.stageY;
+				stage.update();
+			});
+  stage.addChild(cont);
   stage.update();
 }
