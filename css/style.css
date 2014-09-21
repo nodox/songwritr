@@ -19,6 +19,10 @@ body {
 .wrap {
     margin: 0 30px;
     overflow: hidden;
+    text-align: center;
+}
+.wrap > div {
+    margin: 0 auto;
 }
 
 i {font-family: FontAwesome;}
@@ -36,10 +40,31 @@ a {text-decoration: none; color: #fefefe}
 .left {
     float: left;
 }
-
 .right {
     float: right;
 }
+
+.button {
+    background: rgb(101, 211, 253);
+    border-radius: 40px;
+    margin: 20px 0 5px;
+    clear: both;
+    left: 50%;
+    position: relative;
+    color: #fefefe;
+    float: left;
+    padding: 0.5em 1em;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.button:hover {
+    background: rgb(88, 200, 243) !important;
+    cursor: pointer;
+}
+
 
 /* page layout */
 
@@ -48,11 +73,12 @@ a {text-decoration: none; color: #fefefe}
     color: #fefefe;
 
     height: 50px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
 }
 
 footer {
-    position: fixed;
-    width: 100%;
     bottom: 0;
     font-size: .8em;
     padding: 0.5em 0;
@@ -67,17 +93,15 @@ footer {
 }
 
 .canvas {
-    /* background: red; */
     width: calc(100% - 300px);
     float: left;
-    height: 100%;
 }
 
 .sidebar {
-    position: relative;
+    position: fixed;
     background: rgb(217, 245, 250);
     width: 300px;
-    float: right;
+    right: 0;
     height: 100%;
     overflow: hidden;
 }
@@ -143,9 +167,7 @@ footer {
     transform: translateX(-50%);
 }
 
-.sidebar ul li,
-#submitCustom,
-#saveAs {
+.sidebar ul li {
     color: #fefefe;
     float: left;
     background: rgb(127, 165, 233);
@@ -183,26 +205,6 @@ footer {
     text-align: center;
 }
 
-
-#submitCustom, #saveAs {
-    background: rgb(101, 211, 253);
-    border: none;
-    border-radius: 40px;
-    margin: 20px 0 5px;
-    clear: both;
-    left: 50%;
-    position: relative;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%);
-}
-#submitCustom:hover,
-#saveAs:hover {
-    background: rgb(88, 200, 243) !important;
-    cursor: pointer;
-}
 
 #toCustom,
 #exitCustom {
@@ -249,8 +251,3 @@ footer {
 
 
 /* abcJS library styles */
-#abc {
-    
-}
-
-

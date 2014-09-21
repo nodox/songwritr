@@ -77,7 +77,13 @@ function quickChord( $t ) {
 	return path;
 }
 
-<<<<<<< HEAD
+function saveImage(){
+	var canv = document.getElementById("canv");
+
+	Canvas2Image.saveAsPNG(canv);
+}
+
+
 // added and fucked up by steven from here down will break!!!
 function findChord(string) {
 
@@ -88,47 +94,20 @@ function findChord(string) {
 		if (string[i] == "%") {
 			temps.push(i);
 		}
-	chords = string.substring(temps[i], temps[i])
-
-
-
 	}
+	chords = string.substring(temps[i], temps[i]);
+}
 	
 function findChord(arr) {
 
-  //var string = "ABCD%nEFGHI%nJKLM%nNO";
-  var arr ["you a%re my friend", "you are % my fr%niend"]
-	var chords = "";
-	var temps = arr.split("%");
+	//var string = "ABCD%nEFGHI%nJKLM%nNO";
+	var arr = ["you a%re my friend", "you are % my fr%niend"];
+	var chords = [];
 
-	// for (j = 0; j < arr.length; j++) {  // for each index that has an string
-		// for (i = 0; i < arr[i].length; i++) { // for each string length
-			// if (arr[i] === "%") {
-				// temps.push(chords);
-				// chords = ""
-			// }
-			// console.log(chords);
-		// }
-	// }
-// }
-
-  
-  var string = "ABCD%nEFGHI%nJKLM%nNO";
-	var chords = "";
-	var temps = [];
-
-	for (i = 0; i < string.length; i++) {
-		chords += string[i];
-		if (string[i] === "%") {
-			chords.splice(i,i+1);	
-		}
-	    alert(chords);
-
+	for (var i = 0; i < arr.length; i++) {
+		var temps = arr[i].split("%");
+		for (var j = 0; j < arr.length; j++)
+			chords.push(temps[j]);
 	}
-=======
-function saveImage(){
-	var canv = document.getElementById("canv");
 
-	Canvas2Image.saveAsPNG(canv);
 }
->>>>>>> 586eb501c943c55645d08b077a6216bccf18c7f4
