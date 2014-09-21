@@ -1,3 +1,4 @@
+
 function generateGrid(canvas, bpm, grouping, color) {
 
             var canvas = document.getElementById('myCanvas');
@@ -15,7 +16,6 @@ function generateGrid(canvas, bpm, grouping, color) {
                 context.beginPath();
 
                 context.lineWidth = 0.25;
-
                 context.moveTo(i * distanceBetweenLines, 0);
 
                 context.lineTo(i * distanceBetweenLines, canvas.height);
@@ -35,9 +35,8 @@ function generateGrid(canvas, bpm, grouping, color) {
                 context.moveTo(i * distanceBetweenLines, 0);
 
                 context.lineTo(i * distanceBetweenLines, canvas.height);
-
-        
-        context.strokeStyle = color || '#7700ff';
+	
+       	        context.strokeStyle = color || '#7700ff';
 
                 context.stroke();
 
@@ -60,7 +59,6 @@ function generateGrid(canvas, bpm, grouping, color) {
             }
 
         return distanceBetweenLines;
-
 
         }
 function enableDrawing(canvas, drawButton, color) {
@@ -180,5 +178,4 @@ function enableDrawing(canvas, drawButton, color) {
                 }
 
             }
-
         }

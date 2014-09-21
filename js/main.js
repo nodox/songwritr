@@ -6,14 +6,18 @@ $(function() {
 	$( '#toCustom' ).click( toCustom );
 	$( '#exitCustom' ).click( exitCustom );
 	$( '#submitCustom' ).click( imgChanger );
+	$( '#saveAs' ).click( saveImage );
 
 	$( '.sidebar ul li' ).click( function() {
 		var $t = $( this );
+
 		if ( $t.hasClass( 'active' ) ) {
 			$t.removeClass( 'active' );
 		} else {
 			$t.siblings().removeClass( 'active' );
 			$t.addClass( 'active' );
+			if ( $t.parent().parent().hasClass( 'quickadd' ) )
+				quickChord( $t );
 		}
 	});
 
@@ -36,13 +40,17 @@ function exitCustom() {
 	$( '.custom' ).css( 'left' , "100%" );
 }
 
-function imgChanger() {
+/*public*/ function imgChanger() {
 	var path = findImg();
 	$( '#currentChord img' ).attr( 'src', path );
 	exitCustom();
+	$( '.sidebar ul li' ).removeClass( 'active' );
+
+	//insert on canvas
+	makeChords( path );
 }
 
-function notImg(url) {
+function notImg( url ) {
 	var img;
     img = new ActiveXObject( 'Scripting.FileSystemObject' );
     return img.FileExists( url );
@@ -55,12 +63,51 @@ function findImg() {
 	});
 	imgPath += ".jpg";
 
-<<<<<<< HEAD
-	if ( notImg( imgPath ) )
-		imgPath = "img/empty.png";
-
-=======
-	makeChords(imgPath);
->>>>>>> 9a1f0b46ceadbe350f2381f31f0990fe052be6cc
 	return imgPath;
+}
+
+function quickChord( $t ) {
+	var path = "img/";
+	path += $t.attr( 'value' );
+	path += ".jpg";
+
+	$( '#currentChord img' ).attr( 'src', path );
+	makeChords( path );
+
+	return path;
+}
+
+function saveImage(){
+	var canv = document.getElementById("canv");
+
+	Canvas2Image.saveAsPNG(canv);
+}
+
+
+// added and fucked up by steven from here down will break!!!
+function findChord(string) {
+
+	var chords = "";
+	var temps = [];
+
+	for (i = 0; i < string.length; i++) {
+		if (string[i] == "%") {
+			temps.push(i);
+		}
+	}
+	chords = string.substring(temps[i], temps[i]);
+}
+	
+function findChord(arr) {
+
+	//var string = "ABCD%nEFGHI%nJKLM%nNO";
+	var arr = ["you a%re my friend", "you are % my fr%niend"];
+	var chords = [];
+
+	for (var i = 0; i < arr.length; i++) {
+		var temps = arr[i].split("%");
+		for (var j = 0; j < arr.length; j++)
+			chords.push(temps[j]);
+	}
+
 }

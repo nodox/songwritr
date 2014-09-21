@@ -1,10 +1,17 @@
+/*All the animation javascript functions*/
 var stage;
-
 var text;
 var oldArr;
+var offset;
 
 function initCreate(){
   stage = stage = new createjs.Stage("canv");
+  // enable touch interactions if supported on the current device:
+		createjs.Touch.enable(stage);
+
+		// enabled mouse over / out events
+		stage.enableMouseOver(10);
+		stage.mouseMoveOutside = true;
 }
 
 function makeText(distanceBetweenLines){
@@ -23,12 +30,10 @@ function makeText(distanceBetweenLines){
       label.textAlign = "left";
       label.y = 0;
       label.x = 0;
-      /*var coor = {x : initialX, y: initialY}; //makes an object with the coordinates */
       var drag = new createjs.Container();
       drag.x = 30;
       drag.y = initialY;
-      var initialY = initialY+50;
-    /*  coordinates[i] = coor; //store the coordinates*/
+      initialY += 50;
       drag.addChild(label);
 
 
@@ -54,14 +59,34 @@ function makeText(distanceBetweenLines){
 
 }
 
-function makeChords(imgUrl){ // make an image of a specified chord
-  var bitmap = new createjs.Bitmap(imgUrl);
+function makeChords(imgUrl){
+  var offset; // make an image of a specified chord
+  var img = new Image();
+  img.src = imgUrl;
+  img.onload = handleImageLoad; //call other on imaghe load method to deal with issues calling methods before image is laoded
 
-  var drag = new createjs.Container();
-  drag.x = 10;
-  drag.y = 10;
 
-  drag.addChild(bitmap);
-  stage.addChild(drag);
+}
+
+function handleImageLoad(event){
+  var image = event.target; //set the image file to the Image this was called on
+
+  var bitmap = new createjs.Bitmap(image);
+  var cont = new createjs.Container();
+  cont.x = 10;
+  cont.y = 10;
+  cont.addChild(bitmap);
+
+//remove chord when it's double clicked
+  bitmap.on("dblclick",function(evt){
+    stage.remove(bitmap);
+  });
+//allows the image to be dragged
+bitmap.on("pressmove",function(evt) {
+				evt.currentTarget.x = evt.stageX;
+				evt.currentTarget.y = evt.stageY;
+				stage.update();
+			});
+  stage.addChild(cont);
   stage.update();
 }
