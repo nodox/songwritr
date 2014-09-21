@@ -27,7 +27,7 @@ function makeText(){
       var drag = new createjs.Container();
       drag.x = 30;
       drag.y = initialY;
-      var initialY = initialY+50;
+      initialY += 50;
     /*  coordinates[i] = coor; //store the coordinates*/
       drag.addChild(label);
 

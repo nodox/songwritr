@@ -144,7 +144,8 @@ footer {
 }
 
 .sidebar ul li,
-#submitCustom {
+#submitCustom,
+#saveAs {
     color: #fefefe;
     float: left;
     background: rgb(127, 165, 233);
@@ -183,7 +184,7 @@ footer {
 }
 
 
-#submitCustom {
+#submitCustom, #saveAs {
     background: rgb(101, 211, 253);
     border: none;
     border-radius: 40px;
@@ -197,7 +198,8 @@ footer {
     -o-transform: translateX(-50%);
     transform: translateX(-50%);
 }
-#submitCustom:hover {
+#submitCustom:hover,
+#saveAs:hover {
     background: rgb(88, 200, 243) !important;
     cursor: pointer;
 }

@@ -6,6 +6,7 @@ $(function() {
 	$( '#toCustom' ).click( toCustom );
 	$( '#exitCustom' ).click( exitCustom );
 	$( '#submitCustom' ).click( imgChanger );
+	$( '#saveAs' ).click( saveImage );
 
 	$( '.sidebar ul li' ).click( function() {
 		var $t = $( this );
@@ -15,9 +16,9 @@ $(function() {
 		} else {
 			$t.siblings().removeClass( 'active' );
 			$t.addClass( 'active' );
+			if ( $t.parent().parent().hasClass( 'quickadd' ) )
+				quickChord( $t );
 		}
-		if ( $t.parent().parent().hasClass( 'quickadd' ) )
-			quickChord();
 	});
 
 });
@@ -43,12 +44,13 @@ function exitCustom() {
 	var path = findImg();
 	$( '#currentChord img' ).attr( 'src', path );
 	exitCustom();
+	$( '.sidebar ul li' ).removeClass( 'active' );
 
 	//insert on canvas
-	makeChords(path);
+	makeChords( path );
 }
 
-function notImg(url) {
+function notImg( url ) {
 	var img;
     img = new ActiveXObject( 'Scripting.FileSystemObject' );
     return img.FileExists( url );
@@ -64,12 +66,13 @@ function findImg() {
 	return imgPath;
 }
 
-function quickChord() {
+function quickChord( $t ) {
 	var path = "img/";
-	path += $( '.quickadd' ).find( '.active' ).attr( 'value' );
+	path += $t.attr( 'value' );
 	path += ".jpg";
 
 	$( '#currentChord img' ).attr( 'src', path );
+	makeChords( path );
 
 	return path;
 }
