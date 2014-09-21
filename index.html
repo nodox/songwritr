@@ -10,6 +10,7 @@
 	<script src="js/main.js"></script>
 	<script src="js/animation.js"></script>
 	<script src = "js/easeljs-0.7.1.min.js"></script>
+	<script src="js/abcjs_editor_1.12-min.js"></script>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -29,11 +30,40 @@
 	<div class="main">
 		<div class="canvas">
 			<div class="wrap">
+				<!--
 				<textarea id = "tArea" rows = "30" cols = "50" onkeyup = "makeText()">
 				</textarea>
+				-->
+
+				<textarea  name="abc" id="abc" cols="80" rows="15" style="margin: 2px; width: 576px; height: 175px;">
+X: 1
+T: Cooley's
+M: 4/4
+L: 1/8
+R: reel
+K: Emin
+|:D2|EB{c}BA B2 EB|~B2 AB dBAG|FDAD BDAD|FDAD dAFD|
+EBBA B2 EB|B2 AB defg|afe^c dBAF|DEFD E2:|
+|:gf|eB B2 efge|eB B2 gedB|A2 FA DAFA|A2 FA defg|
+eB B2 eBgB|eB B2 defg|afe^c dBAF|DEFD E2:|
+				</textarea>
+				<hr>
+				<div id="paper0" style="width:805"></div>
+				<script type="text/javascript">
+						window.onload = function() {
+							abc_editor = new ABCJS.Editor("abc", { paper_id: "paper0", midi_id:"midi", warnings_id:"warnings" });
+						}
+				</script>
+
+
+
+
 				<canvas id = "canv" width = "500" height = "700"> <!-- where the text is rendered -->
 					Canvas goes here
 				</canvas>
+
+
+
 			</div>
 		</div>
 		<div class="sidebar">
